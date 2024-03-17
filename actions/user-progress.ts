@@ -31,14 +31,14 @@ export const upsertUserProgress = async (courseId: number) => {
         await db.update(userProgress).set({
             activeCourseId: courseId,
             userName: user.firstName || "User",
-            userImagerc: user.imageUrl || "/mascot.svg"
+            userImageSrc: user.imageUrl || "/mascot.svg"
         })
     } else {
         await db.insert(userProgress).values({
             userId,
             activeCourseId: courseId,
             userName: user.firstName || "User",
-            userImagerc: user.imageUrl || "/mascot.svg"
+            userImageSrc: user.imageUrl || "/mascot.svg"
         })
     }
 
